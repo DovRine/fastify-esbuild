@@ -10,11 +10,11 @@ async function doBuild() {
         entryPoints: allTypescriptFiles,
         logLevel: 'info',
         outdir: 'dist',
-        bundle: true,
+        bundle: false,
         minify: true,
         platform: 'node',
         format: 'cjs',
-        sourcemap: false,
+        sourcemap: true,
         plugins: [
             {
                 ...esbuildPluginPino({

@@ -5,7 +5,7 @@
     "clean": "rimraf dist",
     "dev": "tsx watch src/server/app",
     "build": "npm run clean && tsx esbuild",
-    "start": "npm run build && node build",
+    "start": "npm run build && node dist/server/app",
     "posttest": "node ./test/vitest.js off",
     "test": "vitest",
     "pretest": "node ./test/vitest.js on",

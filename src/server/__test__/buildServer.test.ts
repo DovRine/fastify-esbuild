@@ -59,4 +59,13 @@ describe('buildServer', () => {
         expect(server.ready).toHaveBeenCalledTimes(1)
         expect(server.ready).toHaveBeenCalledWith(expect.any(Function))
     })
+
+    it('uses the singleton pattern', async () => {
+        // execute
+        const server = await buildServer({ enableLogging: false })
+        const server2 = await buildServer({ enableLogging: false })
+
+        // assert
+        expect(server).toBe(server2)
+    })
 })
